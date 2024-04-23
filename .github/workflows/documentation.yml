@@ -1,24 +1,20 @@
-name: Deploy Github pages
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+name: "github actions build and deploy gh-pages" #流程名称
+on: [push] #当对当前仓库push代码的时候触发
+jobs: 
+  build-and-deploy: #脚本名称
+    runs-on: ubuntu-latest #运行在乌班图linux上
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-      with:
-        persist-credentials: false
-    - name: Install and Build
-      run: |
-        npm install
-        npm run-script build 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run build
+      - name: Checkout  #步骤1：checkout
+        uses: actions/checkout@v2.3.1 #checkout需要引用的依赖
+        with:
+          persist-credentials: false #checkout依赖参数：不保存证书
+      - name: install and build #步骤2：安装依赖和打包
+        run: | #运行下面两行命令
+          npm install #安装依赖，当前分支的根目录做为默认目录
+          npm run build #打包代码
+      - name: Deploy #步骤3：把编译好的静态目录上传到gh-pages分支上
+        uses: JamesIves/github-pages-deploy-action@3.5.9 #这里调用第三方依赖，用于上传代码到指定分支上
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages #github pages 默认的分支
+          FOLDER: build #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
