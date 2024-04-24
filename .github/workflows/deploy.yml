@@ -21,8 +21,8 @@ jobs:
           token2: ${{ secrets.SECRET_TOKEN }}
         run: |
           echo "Deploying to production..."
-          echo ${{ secrets.TOKEN }}
-          echo ${{ secrets.SECRET_TOKEN }}
-          echo  ${{ TOKEN }}
-          echo  ${{ SECRET_TOKEN }}
+          echo "${{ secrets.TOKEN }}"
+          echo "${{ secrets.SECRET_TOKEN }}”
+          echo "${{ TOKEN }}"
+          echo "${{ SECRET_TOKEN }}"
           # 在此处使用MY_SECRET环境变量的值
