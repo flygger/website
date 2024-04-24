@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flygger.github.io/website/blog</id>
-    <title>My Site Blog</title>
+    <title>飞享的知识库 Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flygger.github.io/website/blog"/>
-    <subtitle>My Site Blog</subtitle>
+    <subtitle>飞享的知识库 Blog</subtitle>
     <icon>https://flygger.github.io/website/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
