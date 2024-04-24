@@ -17,12 +17,12 @@ jobs:
           npm run build #打包代码
       - name: Deploy #步骤3：把编译好的静态目录上传到gh-pages分支上
         env:
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           token2: ${{ secrets.SECRET_TOKEN }}
         run: |
           echo "Deploying to production..."
-          echo "${{ secrets.TOKEN }}"
+          echo "${{ secrets.ACCESS_TOKEN }}"
           echo "${{ secrets.SECRET_TOKEN }}”
-          echo "${{ TOKEN }}"
+          echo "${{ ACCESS_TOKEN }}"
           echo "${{ SECRET_TOKEN }}"
           # 在此处使用MY_SECRET环境变量的值
