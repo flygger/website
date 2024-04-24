@@ -1,5 +1,7 @@
 name: "github actions build and deploy gh-pages" #流程名称
 on: [push] #当对当前仓库push代码的时候触发
+permissions:
+  contents: write
 jobs: 
   build-and-deploy: #脚本名称
     runs-on: ubuntu-latest #运行在乌班图linux上
